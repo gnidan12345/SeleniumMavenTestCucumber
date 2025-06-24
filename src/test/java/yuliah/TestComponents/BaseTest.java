@@ -54,10 +54,10 @@ public class BaseTest {
         //      WebDriverManager.chromedriver().setup();
 
         if(browserNane.contains("chrome")){
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("headless");
-            if(browserNane.contains("headless")) {
-                driver = new ChromeDriver(options);
+//            ChromeOptions options = new ChromeOptions();
+//            options.addArguments("headless");
+            if(browserNane.contains("chrome")) {
+                driver = new ChromeDriver();
                 //run in full screen
                 driver.manage().window().setSize(new Dimension(1440,900));
             }

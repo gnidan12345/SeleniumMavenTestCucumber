@@ -16,7 +16,9 @@ import java.util.List;
 
 public class SubmitOrder_refactorTest extends BaseTest{
 
-    String productname = "ZARA COAT 3";
+
+
+    String productName = "ZARA COAT 3";
 
 // we use TESTNG here to avoid using static methods here
 
@@ -71,7 +73,7 @@ public class SubmitOrder_refactorTest extends BaseTest{
             ProductCatalogue productCatalogue = landingPage.loginApplication("gnidan12345@gmail.com", "Qwerty12345");
             Orderpage orderpage = productCatalogue.goToOrdersPage();
 
-            Assert.assertTrue(orderpage.VerifyOrderDispaly(productname));
+            Assert.assertTrue(orderpage.VerifyOrderDispaly(productName));
 
 
         }

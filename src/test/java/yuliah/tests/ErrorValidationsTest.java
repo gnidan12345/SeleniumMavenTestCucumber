@@ -21,7 +21,7 @@ public class ErrorValidationsTest extends BaseTest {
             String productname = "QWERTY";
             landingPage.loginApplication("gnidan123456@gmail.com", "Qwerty123453");
 
-            Assert.assertEquals("Incorrect email  password.", landingPage.getErrorMessage());
+            Assert.assertEquals("Incorrect email or password.", landingPage.getErrorMessage());
 
         }
 

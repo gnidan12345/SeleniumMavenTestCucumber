@@ -3,15 +3,17 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>yuliah</groupId>
-  <artifactId>SeleniumMavenTest</artifactId>
+  <artifactId>SeleniumMavenTestCucumber</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>SeleniumMavenTest</name>
+  <name>SeleniumMavenTestCucumber</name>
   <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -154,27 +156,26 @@
       </build>
     </profile>
 
+    <profile>
+      <id>CucumberTests</id>
+
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.5.2</version>
+            <configuration>
+              <includes>
+                <include>**/TestNGTestRunner.java</include>
+              </includes>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
   </profiles>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>8</source>
-          <target>8</target>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.5.2</version>
-        <configuration>
-          <suiteXmlFiles>
-            <suiteXmlFile>testsuits/testng.xml</suiteXmlFile>
-          </suiteXmlFiles>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+
+
 </project>
