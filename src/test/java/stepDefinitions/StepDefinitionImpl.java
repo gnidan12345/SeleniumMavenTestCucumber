@@ -15,6 +15,7 @@ import java.util.List;
 public class StepDefinitionImpl extends BaseTest {
 
     //creating an object of landingpage
+    //new0807
     public LandingPage landingPage;
     public ProductCatalogue productCatalogue;
     public ThanksPage thanksPage;
